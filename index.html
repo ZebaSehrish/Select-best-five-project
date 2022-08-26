@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Best Five</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-800">
+    <header>
+        <section class="text-center h-96 bg-black pt-28">
+            <h3 class="text-5xl text-amber-600">Select Your Best Five</h3>
+            <p class=" mx-56 mt-5 pt-10 px-44 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Porro, et.
+                Aliquid tenetur
+                optio
+                in ea quod
+                dolor!
+                Tempore animi dignissimos, tenetur, quod aliquam sunt illo aspernatur qui, fugit eveniet nam!</p>
+        </section>
+
+    </header>
+    <main>
+        <section class="mt-12 mb-60">
+            <div class="grid grid-cols-4 gap-4 w-9/12 mx-auto text-white text-center">
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-1.JPG" alt="">
+                    <h4 id="player-1" class=" text-2xl pt-5 font-medium">Lionel Messi</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-1" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-2.JPG" alt="">
+                    <h4 id="player-2" class=" text-2xl pt-5 font-medium">Neymar Jr</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-2" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-3.JPG" alt="">
+                    <h4 id="player-3" class=" text-2xl pt-5 font-medium">Kylian Mbappé</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-3" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black">
+                    <!-- <h4 class=" text-2xl p-5 font-medium">Selected <span id="player-list">0</span></h4> -->
+                    <h2 class="text-2xl p-5 font-medium">Selected <span class="text-blue-500" id="select-list">0</span>
+                    </h2>
+                    <table align="center">
+                        <tbody id="player-list">
+
+                        </tbody>
+
+                    </table>
+
+
+                </div>
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-4.JPG" alt="">
+                    <h4 id="player-4" class=" text-2xl pt-5 font-medium">Vítor Machado</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-4" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-5.JPG" alt="">
+                    <h4 id="player-5" class=" text-2xl pt-5 font-medium">Sergio Ramos</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-5" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black h-fit">
+                    <img src="images/players/player-6.JPG" alt="">
+                    <h4 id="player-6" class=" text-2xl pt-5 font-medium">Renato Sanches</h4>
+                    <h2 class="text-gray-300 pt-2">36 goals . 120 Assist</h2>
+                    <button id="btn-player-6" class="bg-sky-600 hover:bg-sky-700 w-4/6 mt-6 mb-6 px-2 py-2 text-white"
+                        onclick="select(this);this.disabled=true;">Select</button>
+                </div>
+                <div class="bg-black h-fit">
+                    <h4 class=" text-2xl p-5 font-medium">Budget</h4>
+                    <h4 class="m-2 p-2 text-gray-300">Per Player
+                        <input class="w-2/5 h-8 m-2 bg-black border-gray-300" type="text" name="" id="player-field"
+                            placeholder="$">
+                    </h4>
+                    <button class="bg-sky-600 hover:bg-sky-700 w-4/6 mb-6 px-2 py-2 text-white"
+                        id="btn-calculate">Calculate</button>
+                    <h4 class="m-2 p-2 text-gray-300">Player Expenses <span class="ml-5">$</span> <span
+                            id="player-expenses">00</span></h4>
+                    <h4 class="m-2 p-2 text-gray-300">Manager
+                        <input class="w-2/5 h-8 m-2 bg-black border-gray-300" type="text" name="" id="manager-field"
+                            placeholder="$">
+                    </h4>
+                    <h4 class="m-2 p-2 text-gray-300">Coach
+                        <input class="w-2/5 h-8 m-2 bg-black border-gray-300" type="text" name="" id="coach-field"
+                            placeholder="$">
+                    </h4>
+                    <button id="btn-calculate-total"
+                        class="bg-sky-600 hover:bg-sky-700 w-4/6 mb-6 px-2 py-2 text-white">Calculate Total</button>
+                    <h4 class="mb-10 text-gray-300">Total <span class="ml-16">$</span> <span
+                            id="expenses-total">00</span>
+                    </h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <h3 class=" m-10 text-center text-white">Copyright @ 2022 All Rights Reserved.</h3>
+    </footer>
+    <script src="js/utilities.js"></script>
+    <script src="js/expense.js"></script>
+</body>
+
+</html>
