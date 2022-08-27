@@ -7,19 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Best Five</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+    </style>
 </head>
 
 <body class="bg-gray-800">
     <header>
-        <section class="text-center h-96 bg-black pt-28">
-            <h3 class="text-5xl text-amber-600">Select Your Best Five</h3>
-            <p class=" mx-56 mt-5 pt-10 px-44 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Porro, et.
-                Aliquid tenetur
-                optio
-                in ea quod
-                dolor!
-                Tempore animi dignissimos, tenetur, quod aliquam sunt illo aspernatur qui, fugit eveniet nam!</p>
+        <section class=" h-96 bg-black ">
+            <img class="w-20" src="images/players/head-image.JPG" alt="">
+            <div class="text-center px-96 pb=20">
+
+                <h3 class="text-5xl text-amber-600 font-bold" style="font-family: 'Dancing Script', cursive;">Select
+                    Your
+                    Best
+                    Five</h3>
+                <p class=" mt-5 pt-10 text-white">From a shortlist of players, the panel will select the
+                    winner
+                    for their respective achievements.The Best Men's Player will be given to the most outstanding
+                    player in
+                    men's football as voted for by an international jury comprising the current coaches and
+                    managers of the team and fans
+                    registered to the program.</p>
+            </div>
+
         </section>
 
     </header>
@@ -101,8 +112,8 @@
                     </h4>
                     <button id="btn-calculate-total"
                         class="bg-sky-600 hover:bg-sky-700 w-4/6 mb-6 px-2 py-2 text-white">Calculate Total</button>
-                    <h4 class="mb-10 text-gray-300">Total <span class="ml-16">$</span> <span
-                            id="expenses-total">00</span>
+                    <h4 class="mb-10 text-gray-300">Total <span class="ml-16 text-red-500">$</span> <span
+                            id="expenses-total" class="text-red-500">00</span>
                     </h4>
                 </div>
             </div>
