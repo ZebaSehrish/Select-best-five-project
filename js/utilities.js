@@ -4,20 +4,14 @@ function display(player) {
     const listBody = document.getElementById('player-list');
     listBody.innerHTML = '';
     for (let i = 0; i < player.length; i++) {
-        if (i < 5) {
-            const name = playerArray[i].playerName;
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
+
+        const name = playerArray[i].playerName;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
             <th class="text-xl">${i + 1}</th> 
              <td class="pl-5 text-xl">${name}</td>
              `;
-            listBody.appendChild(tr);
-
-
-        }
-        else {
-            alert('number of selected players cannot be more than five');
-        }
+        listBody.appendChild(tr);
 
     }
 
@@ -31,10 +25,14 @@ function select(element) {
         playerName: playerName
     }
 
-    playerArray.push(playerObj);
+    if (playerArray.length < 5) {
+        playerArray.push(playerObj);
+    }
+    else {
+        alert('number of selected players cannot be more than five');
+    }
 
     document.getElementById("select-list").innerText = playerArray.length;
-
     display(playerArray);
 
 }
@@ -46,7 +44,9 @@ function getInputFieldValueById(inputFieldId) {
     const inputFieldValue = parseFloat(inputFieldValueString);
     //inputField.value = '';
     return inputFieldValue;
+
 }
+
 function getTextElementValueById(elementId) {
     const textElement = document.getElementById(elementId);
     const textElementValueString = textElement.innerText;
@@ -54,6 +54,7 @@ function getTextElementValueById(elementId) {
     //textElement.innerText = '';
     return textElementValue;
 }
+
 function setTextElementvalueById(elementId, newValue) {
     const textElement = document.getElementById(elementId);
     textElement.innerText = newValue;
